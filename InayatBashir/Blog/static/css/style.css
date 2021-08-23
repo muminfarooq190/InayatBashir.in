@@ -1095,3 +1095,176 @@ footer{
 		margin-top: 175px !important;
 	}
 }
+
+
+/* Styles 2 css 
+
+
+
+
+*/
+
+.blog_heading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+h1,a,h2,h3,h4,h5,p{
+    font-family: "Montserrat";
+    color:#a77a3f;
+}
+a{
+    text-decoration: none;
+}
+.h1blog{
+    font-weight: 700;
+    font-size: 4rem;
+    
+}
+.blogssection{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+@media (max-width:1500px) {
+
+    .blogs__text{
+      
+        position: absolute;
+        bottom: 19% !important;
+        width: 30rem !important;
+    }
+}
+@media (max-width:1200px) {
+    
+    
+    .blogs___div{
+        position: relative;
+        margin: 0px !important;
+
+    }
+    .blogs__image{
+     
+        width:100% !important;
+    }
+    .blogs__text{
+       
+        position: relative !important;
+        left: -4% !important;
+        bottom: 2.4% !important;
+        width: 23rem !important;
+    }
+    .normal_blogs_div{
+        margin-top: 0rem !important;
+        
+        flex-direction: column !important;
+       
+    }
+    .normalblogimage{
+        width: 95% !important;
+        padding: auto !important;
+    }
+    .normalblogtext{
+        width: 100% !important;
+    }
+    .blogs__div{
+        
+        margin-left: 3rem !important;
+    }
+    .morestuff__div{
+        width: auto !important;
+        margin-left: 0px !important;
+    }
+    .recentblog{
+        margin: 0px !important;
+    }
+}
+.blogs__div{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin-left: 10rem;
+    width: 55%;
+}
+.blogs___div{
+    width: 80%;
+}
+.morestuff__div{
+    width: 23%;
+    padding: 2rem;
+    margin-left: 10rem ;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: left;
+  
+}
+.blogs__image{
+    background-size: cover;
+    width: 100%;
+}
+.blogs__text{
+    position: absolute;
+    width: 40rem;
+    bottom: 13%;
+    left: 32%;
+    min-height: 10rem;
+    padding: 2rem;
+    background-color: white;
+   
+}
+
+.normal_blogs_div{
+    margin-top: 4rem;
+    min-height: 10rem;
+    padding-top: 2rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;   
+}
+.normalblogdiv{
+    width: 50%;
+    
+}
+.normalblogtext{
+    padding-left: 1rem;
+}
+.normalblogimage{
+  
+  overflow: hidden;
+}
+.normalimage{
+    width: 100%;
+}
+
+.h2blogs{
+    font-size: 2rem;
+    letter-spacing: .4rem;
+
+}
+.nospace{
+    letter-spacing: 0px;
+}
+.blogs_para{
+    font-weight: 400;
+    padding-bottom: 1rem;
+}
+.blogs_btn{
+    font-weight: 600;
+    
+}
+.blogs_btn a {
+    cursor: pointer;
+}
+@media (max-width:990px) {
+    .blogs__div{
+        width: calc(100% - 10rem) !important;
+    }
+}
+.recentblog{
+    padding: .7rem;
+    margin-top: .5rem;
+    font-size: 2rem;
+  
+}

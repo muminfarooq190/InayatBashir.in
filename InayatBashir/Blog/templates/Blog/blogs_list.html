@@ -1,0 +1,106 @@
+{% extends 'Blog/index.html' %}
+{% load static %}
+{% block content %}
+<div class="blog_heading">
+    <h1 class="h1blog">
+        The Blog
+    </h1>
+</div>
+<section class="blogssection">
+    <div class="blogs__div cooldiv">
+
+        {% for blogs in blog_list %}
+        <div class="blogs___div">
+            <h2 class="travelheaderr">
+                {{blogs.published_on}}
+            </h2>
+              <img src="{{blogs.image_one.url}}" alt="" class="blogs__image">
+           <div class="blogs__text">
+               <h2 class="h2blogs">{{blogs.name}}</h2>
+               <p class="blogs_para">
+                   {{blogs.description|truncatechars:50}}
+                   </p>
+               <div class="blogs_btn">
+                   <a href="#"> --- Read More</a>
+               </div>
+
+           </div>
+        
+        </div>
+      
+      
+        <div class="normal_blogs_div">
+            <div class="normalblogimage normalblogdiv">
+                <h2 class="travelheaderr">
+                   {{blogs.published_on}}
+                </h2>
+                <img src="{{ blogs.image_one.url }}" alt="" class="normalimage">
+            </div>
+            <div class="normalblogtext normalblogdiv">
+                <h2 class="h2blogs">{{blogs.name}}</h2>
+                <p class="blogs_para">
+                    {{blogs.description}}
+                     </p>
+                <div class="blogs_btn">
+                    <a href="#"> --- Read More</a>
+                </div>
+            </div>
+    </div>
+    {% endfor %}
+    <!-- <div class="normal_blogs_div">
+        <div class="normalblogimage normalblogdiv">
+            <h2 class="travelheaderr">
+                June,2014
+            </h2>
+            <img src="{% static './images/01 - Copy.jpg'%}" alt="" class="normalimage">
+        </div>
+        <div class="normalblogtext normalblogdiv">
+            <h2 class="h2blogs">Who to blame?</h2>
+            <p class="blogs_para">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, dolore?
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, dolore?
+            </p>
+            <div class="blogs_btn">
+                <a href="#"> --- Read More</a>
+            </div>
+        </div>
+     </div>
+     <div class="normal_blogs_div">
+        <div class="normalblogimage normalblogdiv">
+            <h2 class="travelheaderr">
+                June,2014
+            </h2>
+            <img src="{% static './images/01 - Copy.jpg'%}" alt="" class="normalimage">
+        </div>
+        <div class="normalblogtext normalblogdiv">
+            <h2 class="h2blogs">Who to blame?</h2>
+            <p class="blogs_para">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, dolore?
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, dolore?
+            </p>
+            <div class="blogs_btn">
+                <a href="#"> --- Read More</a>
+            </div>
+        </div>
+     </div>
+  
+    </div> -->
+    
+    <div class="morestuff__div cooldiv">
+        <h2 class="h2blogs nospace">Recent Posts</h2>
+        <div class="recentblog">
+            <a href="#" class="arecentblog">Its okay not to be okay</a>
+        </div>
+        <div class="recentblog">
+            <a href="#" class="arecentblog">One who doesnot understand</a>
+        </div>
+        <div class="recentblog">
+            <a href="#" class="arecentblog">Running out of ideas</a>
+        </div>
+        <div class="recentblog">
+            <a href="#" class="arecentblog">The clever selfish </a>
+        </div>
+        
+    </div>
+</section>
+{% endblock %}

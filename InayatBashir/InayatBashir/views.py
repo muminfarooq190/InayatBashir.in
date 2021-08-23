@@ -4,3 +4,4 @@ from django.http import HttpResponse
 def simple(request):
     # blog = Blog.objects.all()
     return render(request, 'index.html')
+

@@ -26,7 +26,7 @@
                     hello
                 </div>
             <ul class="nav__links">
-                <li class="blog-item blogs cool-link"><a href="blogs.html">Blogs</a></li>
+                <li class="blog-item blogs cool-link"><a href="{% url 'blog:all_blog_list' %}">Blogs</a></li>
                 <li class="blog-item travels cool-link" ><a href="travel.html">Travel</a></li>
                 <li class="blog-item me cool-link"><a href="">Me</a></li>
                 <div class="search-icon"><ion-icon class="icon" name="search-sharp"></ion-icon>
@@ -292,7 +292,7 @@
     </h1>
 </div>
 </section>
-
+{% endblock %}
 <footer>
 <div class="footer_nav footer_div">
     <ul class="footer__list">
@@ -316,6 +316,6 @@
 </div>
 </footer>
 <script src="{% static 'js/script.js' %}"></script>
-  {% endblock %}
+ 
 </body>
 </html>
