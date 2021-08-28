@@ -9,10 +9,12 @@
 <section class="blogssection">
     <div class="blogs__div cooldiv">
 
-        {% for blogs in blog_list %}
+        {% for blogs in blogs_list %}
+
+         {% if blogs.is_top_one %}
         <div class="blogs___div">
             <h2 class="travelheaderr">
-                {{blogs.published_on}}
+                {{blogs.published_on|date:"d-F" }}
             </h2>
               <img src="{{blogs.image_one.url}}" alt="" class="blogs__image">
            <div class="blogs__text">
@@ -21,32 +23,38 @@
                    {{blogs.description|truncatechars:50}}
                    </p>
                <div class="blogs_btn">
-                   <a href="#"> --- Read More</a>
+                   <a href="{% url 'blog:detail_blog' pk=blogs.pk %}"> --- Read More</a>
                </div>
 
            </div>
         
         </div>
+        {% else %}
+        
+       
+
       
       
         <div class="normal_blogs_div">
             <div class="normalblogimage normalblogdiv">
                 <h2 class="travelheaderr">
-                   {{blogs.published_on}}
+                   {{blogs.published_on|date:"d F Y"}}
                 </h2>
                 <img src="{{ blogs.image_one.url }}" alt="" class="normalimage">
             </div>
             <div class="normalblogtext normalblogdiv">
                 <h2 class="h2blogs">{{blogs.name}}</h2>
                 <p class="blogs_para">
-                    {{blogs.description}}
+                    {{blogs.description|truncatechars:150}}
                      </p>
                 <div class="blogs_btn">
-                    <a href="#"> --- Read More</a>
+                    <a href="{% url 'blog:detail_blog' pk=blogs.pk %}"> --- Read More</a>
                 </div>
             </div>
     </div>
+    {% endif %}
     {% endfor %}
+    
     <!-- <div class="normal_blogs_div">
         <div class="normalblogimage normalblogdiv">
             <h2 class="travelheaderr">

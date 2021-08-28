@@ -1,0 +1,32 @@
+{% extends 'Blog/index.html' %}
+
+
+{% block content %}
+<section class="travelsection">
+    <div class="blog_heading">
+        <h1 class="h1blog">
+           My Travel
+        </h1>
+    </div>
+    
+    <div class="travelmain">
+        {% for place in places %}
+        <a href="{% url 'places:detail_place' pk=place.pk %}">
+            <div class="travelmain_four travelmainchild">
+                <div class="travelplace">
+                    <h1>{{place.name}}</h1>
+                </div>
+                <img src="{{place.image_one.url}}" alt="">
+           
+      
+            </div>
+        </a>
+       
+       {% endfor %}
+           
+       
+    </div>
+   
+</section>
+
+{% endblock content %}

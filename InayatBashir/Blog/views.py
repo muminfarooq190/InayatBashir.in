@@ -3,7 +3,7 @@ from core.models import Blog, Places
 from itertools import chain
 from django import template
 from django.views.generic import (
-        ListView,TemplateView
+        ListView,TemplateView, DetailView
 )
 from django.shortcuts import render
 
@@ -27,10 +27,17 @@ class ListTopBlogs(ListView):
 class ListAllBlogs(ListView):
     template_name = 'Blog/blogs_list.html'
     context_object_name = 'blogs_list'
+   
     def get_queryset(self):
-        blogs = Blog.objects.filter(is_top_one=True)
-        return blogs
-        
+        return Blog.objects.all()
 
 
+class DetailBlog(DetailView):
+    model = Blog
+    template_name = 'Blog/blogs_detail.html'
+    context_object_name = 'blog'
+
+
+class AboutMe(TemplateView):
+    template_name = 'Blog/about.html'
 
