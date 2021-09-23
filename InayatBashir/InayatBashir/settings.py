@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-^i@h*og7_!1v!m=g@k81la&+^1pt28vhxu7k=5#f)uatt0j--v'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
@@ -41,7 +41,10 @@ INSTALLED_APPS = [
     'core',
     'Places',
     'Blog',
+    'ckeditor',
+    'ckeditor_uploader'
 ]
+CKEDITOR_UPLOAD_PATH="uploads/"
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -127,7 +130,12 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+MEDIA_ROOT = 'media/'
+STATIC_ROOT =  'static/'
+
+CKEDITOR_IMAGE_BACKEND = "pillow"
+CKEDITOR_IMAGE_QUALITY=75
+CKEDITOR_FORCE_JPEG_COMPRESSION=True
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 

@@ -100,12 +100,13 @@
             </div>
             <div class="text_all">
                 <h1 class="text">{{object.name}}</h1>
+                <small class="text">{{object.duration|safe}}*</small>
                 <p class="text">
-                    {{object.description|truncatechars:200}}
+                    {{object.body|safe|truncatechars:150}}
                 </p>
                 <div class="continuee">
                     
-                    <a href="blog_detail.html" class="continue">Continue Reading...</a>
+                    <a href="{% url 'blog:detail_blog' pk=object.pk %}" class="continue">Continue Reading...</a>
                 
             </div>
             </div>
@@ -297,25 +298,18 @@
 </section>
 {% endblock %}
 <footer>
-<div class="footer_nav footer_div">
-    <ul class="footer__list">
-        <li class="footer__item"><a href="#" class="footer__link">Company</a></li>
-        <li class="footer__item"><a href="#" class="footer__link">Privacy</a></li>
-        <li class="footer__item"><a href="#" class="footer__link">Policy</a></li>
-        <li class="footer__item"><a href="#" class="footer__link">Careers</a></li>
-        <li class="footer__item"><a href="#" class="footer__link">Terms</a></li>
 
-    </ul>
-</div>
 <div class="footer_copy footer_div">
-    <a  class="footer_social" href="" target="_blank"><i class="fab fa-instagram"></i></a>
-    <a class="footer_social" href="facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
-    <a class="footer_social" href="twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+    <a  class="footer_social a" href="instagram.com/x_.inayat" target="_blank"><i class="fab fa-instagram fa-2x"></i></a>
+    <a class="footer_social b" href="facebook.com" target="_blank"><i class="fab fa-facebook fa-2x"></i></a>
+    <a class="footer_social c" href="twitter.com" target="_blank"><i class="fab fa-twitter fa-2x"></i></a>
+    <a class="footer_social d" href="linkedin.com" target="_blank"><i class="fab fa-linkedin fa-2x"></i></a>
+    <a class="footer_social e" href="tumblr.com" target="_blank"><i class="fab fa-tumblr fa-2x"></i></a>
     <h4 class="allrights">
         @2021-2025 All Rights Reserved by Inayat Bashir
 
     </h4>
-    <small>Developed by Mumin Farooq (Muminfarooq586@gmail.com)</small>
+    <small class="developer">Developed by Mumin Farooq (Muminfarooq586@gmail.com)</small>
 </div>
 </footer>
 <script src="{% static 'js/script.js' %}"></script>

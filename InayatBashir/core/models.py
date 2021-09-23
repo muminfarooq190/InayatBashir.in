@@ -4,19 +4,20 @@ import sys
 from PIL import Image
 from io import BytesIO
 from django.core.files.uploadedfile import InMemoryUploadedFile
+from ckeditor_uploader.fields import RichTextUploadingField
 class Blog(models.Model):
 
     name = models.CharField(max_length=200)
-    description = models.CharField(max_length=2000)
     image_one = models.ImageField(upload_to='blogs')
-    image_two = models.ImageField(upload_to='blogs')
+    body = RichTextUploadingField(blank=True)
     published_on = models.DateTimeField(auto_now=True)
     is_in_top_three = models.BooleanField(default=False)
     is_top_one = models.BooleanField(default=False)
+    duration = models.CharField(max_length=20,blank=True)
     def save(self, *args, **kwargs):
         if not self.id:
             self.image_one = self.compressImage(self.image_one)
-            self.image_two = self.compressImage(self.image_two)
+            
         super(Blog , self).save(*args, **kwargs)
     def compressImage(self,uploadedImage):
         imageTemproary = Image.open(uploadedImage)
@@ -46,7 +47,9 @@ class City(models.Model):
 class Places(models.Model):
     name = models.ForeignKey(City, related_name = 'places',on_delete=models.CASCADE)
     image_one = models.ImageField(upload_to='places')
-    image_two = models.ImageField(upload_to='places')
+    image_two = models.ImageField(upload_to='places',blank=True)
+    image_three = models.ImageField(upload_to='places',blank=True)
+    image_four = models.ImageField(upload_to='places',blank=True)
     description_one = models.CharField(max_length=1000 )
     description_two = models.CharField(max_length=1000)
     date = models.DateTimeField(auto_now=True)

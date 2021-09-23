@@ -3,34 +3,45 @@
 {% block content %}
 
 
-<div class="maincontainer">
-    <div class="imagediv">
-        <img src="{{place.image_one.url}}" alt="">
+     <!-- <div class="maincontainer">
+        
+    </div>  -->
+
+<div  class="maincontainer">
+    <div class="divimagecontainer" style="background-image: url('{{place.image_one.url}}'); background-size: cover;
+                                            background-repeat: no-repeat;">
+
     </div>
+  
     <div class="textdiv">
         <div class="heading_autor">
             <h1 class="headin">
-                <span>{{place.name}}</span>
+                <span>{{place.name}}</span></br>
+              <small style=" font-size: 1.7rem;;">  Visited on  {{place.date|date:"d F Y"}}</small>
             </h1>
+            
         </div>
         <p>{{place.description_one}}
         </p>
-    </div>
-</div>
 
-<div class="maincontainer">
-    <div class="textdiv">
-        <div class="heading_autor">
-            <h1 class="headin">
-                <span>{{place.name}}</span>
-            </h1>
-        </div>
-        <p>{{place.description_two}}
+        <p>
+            {{place.description_two}}
         </p>
-    </div>
-    <div style="height: 20rem;" class="imagediv">
-        <img src="{{place.image_two.url}}" alt="">
-    </div>
+    </div> 
+
+    <div class="variousimgcontainer">
+        <div class="cont ">
+            <img src="{{place.image_two.url}}">
+        </div>
+        <div class="cont ">
+          <img src="{{place.image_three.url}}">
+          
+      </div>
+      <div class="cont ">
+          <img src="{{place.image_four.url}}">
+      </div>
+     </div>
+    
    
 </div>
 
