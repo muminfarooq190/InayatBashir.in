@@ -1,9 +1,11 @@
 var travelheder=this.document.getElementById("travelheder");
+
 var travelsection=this.document.querySelector(".travelsection");
 window.addEventListener('scroll',function(e){
 	
 	if(this.window.pageYOffset>45){
 		travelheder.classList.add("navbar");
+		
 		travelheder.nextElementSibling.classList.add('margin_class');
 	}else{
 		travelheder.classList.remove("navbar");

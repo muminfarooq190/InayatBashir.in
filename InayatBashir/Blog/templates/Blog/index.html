@@ -25,9 +25,11 @@
     <div class="container">
     <header id="travelheder">
         <nav id="nav">
+            <a href="{% url 'blog:top_blog_list'%}">
             <div class="logo-div social">
-                    hello
-                </div>
+                hello
+            </div></a>
+           
             <ul class="nav__links">
                 <li class="blog-item blogs cool-link"><a href="{% url 'blog:all_blog_list' %}">Blogs</a></li>
                 <li class="blog-item travels cool-link" ><a href="{% url 'places:all_places_list' %}">Travel</a></li>
@@ -61,9 +63,11 @@
                     </h1>
                 </div>
                 <div class="about_author">
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magni, nobis atque quaerat distinctio natus maiores est a cupiditate suscipit impedit rerum. Blanditiis voluptates ducimus natus aut aperiam officiis in aliquam?</p>
+                    <p>
+                        Born to the family of nobles, i never knew i was going to turn to a whole different species than what people thought of nobles, isnt it the most weird introduction you have ever heard well this website is all about that shit. :/
+                    </p>
                     <div class="learn-more">
-                        <a href="#">Learn More</a>
+                        <a href="{% url 'blog:me'%}">Learn More</a>
                     </div>
                 </div>
                 <div class="image_mirage">
@@ -113,62 +117,7 @@
         </div>
         {% endif %}
         {% endfor %}
-        <!-- <div class="containerr">
-            <div class="imgg">
-                <img src="images/08.jpg" alt="uh ih" />
-            </div>
-            <div class="text_all">
-                <h1 class="text">United Athle 2020</h1>
-                <p class="text">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat esse
-                    explicabo porro impedit nemo dolore incidunt dolores distinctio numquam
-                    autem.
-                </p>
-                <div class="continuee">
-                    
-                        <a href="blog_detail.html" class="continue">Continue Reading...</a>
-                    
-                </div>
-                
-            </div>
-            
-        </div>
-        <div class="containerr">
-            <div class="imgg">
-                <img src="images/08.jpg" alt="uh ih" />
-            </div>
-            <div class="text_all">
-                <h1 class="text">United Athle 2020</h1>
-                <p class="text">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat esse
-                    explicabo porro impedit nemo dolore incidunt dolores distinctio numquam
-                    autem.
-                </p>
-                <div class="continuee">
-                    
-                    <a href="blog_detail.html" class="continue">Continue Reading...</a>
-                
-            </div>
-            </div>
-        </div>
-        <div class="containerr">
-            <div class="imgg">
-                <img src="images/nat-8.jpg" alt="uh ih" />
-            </div>
-            <div class="text_all">
-                <h1 class="text">United Athle 2020</h1>
-                <p class="text">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat esse
-                    explicabo porro impedit nemo dolore incidunt dolores distinctio numquam
-                    autem.
-                </p>
-                <div class="continuee">
-                    
-                    <a href="blog_detail.html" class="continue">Continue Reading...</a>
-                
-            </div>
-            </div>
-        </div> -->
+      
     </div>
 </div>
 </section>
@@ -195,44 +144,14 @@
         </h2>
     </div>
     <div class="explore-travel">
-        <a href="#">Explore </a>
+        <a href="{% url 'places:detail_place' pk=object.pk %}">Explore </a>
     </div>
 </div>
 {% endif %}
 {% endfor %}
 
 
-<!-- <div class="box-two box">
-    <div class="u-center-text ">
-        <h2 class="travelheaderr">
-          SYRIA
-        </h2>
-    </div>
-    <div class="explore-travel">
-        <a href="#">Explore </a>
-    </div>
-</div>
 
-<div class="box-three box">
-    <div class="u-center-text ">
-        <h2 class="travelheaderr">
-          AMSTERDAM
-        </h2>
-    </div>
-    <div class="explore-travel">
-        <a href="#">Explore </a>
-    </div>
-</div>
-<div class="box-three box">
-    <div class="u-center-text ">
-        <h2 class="travelheaderr">
-          TOKYO
-        </h2>
-    </div>
-    <div class="explore-travel">
-        <a href="#">Explore </a>
-    </div>
-</div> -->
 
 {% endwith %}
 </section>
